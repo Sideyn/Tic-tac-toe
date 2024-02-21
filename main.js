@@ -73,16 +73,16 @@ function updateGameStatus(status) {
 
   switch (status) {
     case "X":
-      statusText = "Player 2's turn ( O )";
+      statusText = "Player O's turn";
       break;
     case "O":
-      statusText = "Player 1's turn ( X ) ";
+      statusText = "Player X's turn";
       break;
     case "winsX":
-      statusText = "Player 1 wins ( X )";
+      statusText = "Player X wins";
       break;
     case "winsO":
-      statusText = "Player 2 wins ( O )";
+      statusText = "Player O wins";
       break;
     case "draw":
       statusText = "Equality";
