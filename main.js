@@ -1,9 +1,14 @@
 const cells = document.querySelectorAll(".cell");
 const gameStatus = document.getElementById("gameStatus");
 const endGameStatus = document.getElementById("endGameStatus");
+const resultPlayer1 = document.getElementById("score-player-1");
+const resultPlayer2 = document.getElementById("score-player-2");
 
 const playerOne = "X";
 const playerTwo = "O";
+
+let scorePlayer1 = 0;
+let scorePlayer2 = 0;
 
 let playerTurn = playerOne;
 
@@ -33,6 +38,13 @@ function playGame(e) {
 
   if (checkWin(playerTurn)) {
     updateGameStatus("wins" + playerTurn);
+    if (playerTurn === playerOne) {
+      scorePlayer1++;
+      // resultPlayer1.innerHTML = scorePlayer1;
+    } else {
+      scorePlayer2++;
+      // resultPlayer2.innerHTML = scorePlayer2;
+    }
     return endGame();
   } else if (checkDraw()) {
     updateGameStatus("draw");
@@ -87,6 +99,29 @@ function endGame() {
   document.getElementById("endGame").style.display = "block";
 }
 
+function saveState() {
+  localStorage.setItem("scorePlayer1", scorePlayer1);
+  localStorage.setItem("scorePlayer2", scorePlayer2);
+}
+
 function reloadGame() {
+  saveState();
   window.location.reload();
+}
+
+window.onload = function () {
+  scorePlayer1 = parseInt(localStorage.getItem("scorePlayer1")) || 0;
+  scorePlayer2 = parseInt(localStorage.getItem("scorePlayer2")) || 0;
+  resultPlayer1.textContent = scorePlayer1;
+  resultPlayer2.textContent = scorePlayer2;
+};
+
+function resetScore() {
+  scorePlayer1 = 0;
+  scorePlayer2 = 0;
+
+  resultPlayer1.textContent = scorePlayer1;
+  resultPlayer2.textContent = scorePlayer2;
+
+  saveState();
 }

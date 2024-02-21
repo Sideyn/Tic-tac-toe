@@ -9,30 +9,38 @@
   <body>
     <body>
       <h1>Tic Tac Toe</h1>
-      <div class="container">
-        <div class="tic-tac-toe">
-        <div class="row">
-            <div class="cell" id></div>
-            <div class="cell" id></div>
-            <div class="cell" id></div>
-        </div>
-        <div class="row">
-            <div class="cell" id></div>
-            <div class="cell" id></div>
-            <div class="cell" id></div>
-        </div>
-        <div class="row">
-            <div class="cell" id></div>
-            <div class="cell" id></div>
-            <div class="cell" id></div>
-        </div>
-        <h2 id="gameStatus">Player 1 starts</h2>
-        
-        <div id="endGame">
-          <p id="endGameStatus"></p>
-          <input type="submit" value="Restart" id="reloadGame" onclick="reloadGame()">
+      <div class="score-container">
+        <h2 id="player-1">Player 1  : <span id="score-player-1">0</span></h2>
+        <h2 id="player-2">Player 2 : <span id="score-player-2">0</span></h2>
       </div>
-    </div>
+      
+
+      <div class="game-container">
+        <div class="tic-tac-toe">  
+        <div class="row">
+            <div class="cell" id></div>
+            <div class="cell" id></div>
+            <div class="cell" id></div>
+        </div>
+        <div class="row">
+            <div class="cell" id></div>
+            <div class="cell" id></div>
+            <div class="cell" id></div>
+        </div>
+        <div class="row">
+            <div class="cell" id></div>
+            <div class="cell" id></div>
+            <div class="cell" id></div>
+        </div>
+
+        <h3 id="gameStatus">Player 1 starts</h3>
+
+        <div id="endGame">
+          <h3 id="endGameStatus"></h3>
+          <input type="submit" value="Restart" id="reloadGame" onclick="reloadGame()">
+          <input type="submit" value="Reset Score" id="resetGame" onclick="resetScore()">
+        </div>
+      </div>       
   </div>
 
   
