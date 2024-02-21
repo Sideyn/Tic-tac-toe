@@ -40,10 +40,8 @@ function playGame(e) {
     updateGameStatus("wins" + playerTurn);
     if (playerTurn === playerOne) {
       scorePlayer1++;
-      // resultPlayer1.innerHTML = scorePlayer1;
     } else {
       scorePlayer2++;
-      // resultPlayer2.innerHTML = scorePlayer2;
     }
     return endGame();
   } else if (checkDraw()) {
@@ -81,10 +79,10 @@ function updateGameStatus(status) {
       statusText = "Player 1's turn ( X ) ";
       break;
     case "winsX":
-      statusText = "Player 1 wins";
+      statusText = "Player 1 wins ( X )";
       break;
     case "winsO":
-      statusText = "Player 2 wins";
+      statusText = "Player 2 wins ( O )";
       break;
     case "draw":
       statusText = "Equality";
@@ -119,9 +117,7 @@ window.onload = function () {
 function resetScore() {
   scorePlayer1 = 0;
   scorePlayer2 = 0;
-
   resultPlayer1.textContent = scorePlayer1;
   resultPlayer2.textContent = scorePlayer2;
-
   saveState();
 }
